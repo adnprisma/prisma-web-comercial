@@ -33,8 +33,12 @@
   }));
 
   const leadDialog = document.getElementById('lead-dialog');
+  const diagnosticMessage = 'Hola, quiero solicitar mi diagnóstico PRISMA.';
+  const diagnosticHref = `https://wa.me/${cfg.whatsappNumber || '525567823281'}?text=${encodeURIComponent(diagnosticMessage)}`;
   document.querySelectorAll('[data-open-lead]').forEach(btn => btn.addEventListener('click', e => {
-    e.preventDefault(); document.getElementById('plan-dialog')?.close(); leadDialog.showModal();
+    e.preventDefault();
+    document.getElementById('plan-dialog')?.close();
+    window.location.href = diagnosticHref;
   }));
 
   const leadForm = document.getElementById('lead-form');
