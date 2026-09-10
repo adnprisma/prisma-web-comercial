@@ -130,6 +130,10 @@ function renderPaymentSection(data){
 
   var bank=el("div","lcard");
   bank.appendChild(el("div","sd","O por transferencia bancaria"));
+  bank.appendChild(el("div","tip","Por favor, verifica los datos antes de realizar tu transferencia."));
+  if(data.has_quote){
+    bank.appendChild(bankRow("Monto a transferir", money(data.total)));
+  }
   bank.appendChild(bankRow("Titular", data.bank_titular));
   bank.appendChild(bankRow("Banco", data.bank_nombre));
   bank.appendChild(bankRow("CLABE", data.bank_clabe));
@@ -197,7 +201,7 @@ function showLanding(clientName, data){
   var logout=document.createElement("button");
   logout.type="button";
   logout.className="logout-btn";
-  logout.textContent="Cambiar cliente";
+  logout.textContent="¿No eres tú? Cambia tu código";
   logout.addEventListener("click",logoutAccess);
   pill.appendChild(logout);
   pill.style.display="block";
