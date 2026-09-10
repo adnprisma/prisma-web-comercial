@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Formulario de arranque · Prisma</title><link rel="icon" type="image/png" href="../assets/isotipo_rojo-512.png"><style>*{margin:0;padding:0;box-sizing:border-box}
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tu proyecto · Prisma</title><link rel="icon" type="image/png" href="../assets/isotipo_rojo-512.png"><style>*{margin:0;padding:0;box-sizing:border-box}
 body{background:#F0E4D6;color:#1A1A1A;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.5}
 .band{height:8px;background:#FF5A36}
 .top{background:#1A1A1A;display:flex;align-items:center;gap:18px;padding:18px 26px}.top .brand-logo{height:42px;width:auto;max-width:220px}.top .an{font-family:"Arial Black",Arial;font-weight:900;color:#F5EEE7;font-size:11px;letter-spacing:.22em;text-transform:uppercase}.logout-btn{margin-left:10px;border:0;background:transparent;color:#5a5348;font:inherit;font-size:12px;text-decoration:underline;cursor:pointer}
@@ -7,40 +7,263 @@ body{background:#F0E4D6;color:#1A1A1A;font-family:"Helvetica Neue",Arial,sans-se
 .hero h1{font-family:"Arial Black",Arial;font-weight:900;font-size:30px;color:#fff;margin:8px 0 6px;letter-spacing:-.02em}
 .hero p{font-size:13.5px;color:#cabfb2;max-width:600px;margin:0 auto}
 .wrap{max-width:760px;margin:0 auto;padding:22px 24px 90px}
-.sec-alert{background:#1A1A1A;color:#F5EEE7;border-radius:12px;padding:14px 18px;margin:12px 0;font-size:13.5px}.sec-alert b{color:#FF5A36}
-h2{font-family:"Arial Black",Arial;font-weight:900;font-size:19px;margin:26px 0 4px;letter-spacing:-.01em;border-bottom:2px solid #FF5A36;padding-bottom:6px}
-.sd{font-size:12.5px;color:#6E685F;margin-bottom:6px}
-.fld{margin:11px 0}
-.fld label{display:block;font-size:13.5px;font-weight:700;margin-bottom:4px}
-.fld input,.fld textarea,.fld select{width:100%;border:1px solid #d8cdbf;border-radius:9px;padding:9px 12px;font-size:14px;font-family:inherit;background:#fffdf9}
-.fld textarea{resize:vertical}
-.fld input:focus,.fld textarea:focus,.fld select:focus{outline:none;border-color:#FF5A36}
-.vcard{background:#fffdf9;border:1px solid #e2d8ca;border-radius:12px;padding:6px 16px 14px;margin:10px 0}
-.vh{font-family:"Arial Black",Arial;font-weight:900;font-size:14px;color:#FF5A36;margin:10px 0 2px;text-transform:uppercase;letter-spacing:.06em}
-.tip{background:#EFE6DC;border-left:4px solid #a08a5e;border-radius:8px;padding:9px 13px;font-size:12.5px;color:#5a5348;margin:8px 0}
-.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.btn{background:#FF5A36;color:#fff;border:none;border-radius:10px;padding:13px 22px;font-family:"Arial Black",Arial;font-weight:900;font-size:14px;cursor:pointer}
+h2{font-family:"Arial Black",Arial;font-weight:900;font-size:19px;margin:26px 0 10px;letter-spacing:-.01em;border-bottom:2px solid #FF5A36;padding-bottom:6px}
+.sd{font-size:12.5px;color:#6E685F;margin-bottom:10px}
+.lcard{background:#fffdf9;border:1px solid #e2d8ca;border-radius:12px;padding:18px 20px;margin:10px 0}
+.line{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid #eee2d3;font-size:13.5px}
+.line:last-child{border-bottom:none}
+.line .lbl{color:#3a352c}
+.line .amt{font-weight:700;white-space:nowrap}
+.line.total{border-top:2px solid #1A1A1A;margin-top:6px;padding-top:10px;font-size:16px}
+.line.total .lbl,.line.total .amt{font-family:"Arial Black",Arial;font-weight:900}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#a08a5e;background:#EFE6DC;border-radius:6px;padding:2px 7px;margin-right:8px}
+.tip{background:#EFE6DC;border-left:4px solid #a08a5e;border-radius:8px;padding:12px 14px;font-size:13px;color:#5a5348;margin:8px 0}
+.bank-row{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:5px 0}
+.bank-row .k{color:#6E685F}
+.bank-row .v{font-weight:700}
+.btn{display:inline-block;background:#FF5A36;color:#fff;border:none;border-radius:10px;padding:13px 22px;font-family:"Arial Black",Arial;font-weight:900;font-size:14px;cursor:pointer;text-decoration:none;text-align:center}
 .btn.sec2{background:#1A1A1A}
 .btn:disabled{opacity:.4;cursor:default}
-#preview{display:none;margin-top:18px;background:#fff;border:1px solid #d8cdbf;border-radius:12px;padding:18px 20px}
-#preview h3{font-family:"Arial Black",Arial;font-weight:900;font-size:16px;margin-bottom:8px}
-#preview pre{white-space:pre-wrap;font-family:inherit;font-size:13px;color:#333;line-height:1.5}
-.hint{font-size:12px;color:#6E685F;margin-top:8px}
-@media print{.top,.hero,.sec-alert,.row,.wrap>h2,.wrap>.sd,.wrap>.fld,.wrap>.vcard,.wrap>.tip,.wrap>p{display:none!important}#preview{display:block!important;border:none;margin:0}body{background:#fff}}.login-card{max-width:520px;margin:22px auto 0;background:#fffdf9;border:1px solid #e2d8ca;border-radius:12px;padding:22px 20px;box-shadow:0 18px 50px rgba(26,26,26,.12)}.login-card h2{margin-top:0}.login-card .err{display:none;margin-top:10px;color:#9f1d1d;font-size:13px}.client-pill{display:none;margin:14px auto 0;max-width:520px;background:#EFE6DC;border-radius:999px;padding:8px 12px;font-size:12px;color:#5a5348;text-align:center}[hidden]{display:none!important}</style></head><body><div class="band"></div><div class="top"><img class="brand-logo" src="../assets/logotipo_beige-print.png" alt="PRISMA"><span class="an">Formulario de arranque</span></div><div class="hero"><div class="k">Bienvenidos a Prisma</div><h1>Cuéntanos de tu negocio</h1><p>Con esta información montamos tu sistema de ventas: el reparto por estado, tus vendedores, tus canales y tu agente de IA. Entre más completo, más rápido y mejor lo construimos.</p></div><section class="login-card" id="access-card"><h2>Acceso de cliente</h2><p class="sd">Ingresa el código que te compartió Prisma para abrir tu formulario de arranque.</p><div class="fld"><label for="access-code">Código de acceso</label><input id="access-code" type="text" autocomplete="one-time-code" placeholder="PRISMA-CLIENTE"></div><button class="btn" id="access-submit" type="button">Entrar</button><p class="err" id="access-error">El código no es válido o no está activo.</p></section><div class="client-pill" id="client-pill"></div><div class="wrap" id="form-wrap" hidden><div class="sec-alert">⏱️ Toma ~15-20 min. Al final da clic en <b>"Enviar respuestas"</b> y podrás copiarlas o guardarlas en PDF para enviárnoslas — <b>tal cual las escribas</b>. <br><br>🔒 <b>Nunca escribas contraseñas aquí.</b> Para cualquier acceso te guiaremos de forma segura, sin compartir claves.</div><h2 data-sec="1 · Datos de la empresa">1 · Datos de la empresa</h2><div class="fld" data-q="Nombre de la empresa"><label>Nombre de la empresa</label><input type="text" placeholder=""></div><div class="fld" data-q="¿Qué venden exactamente? (tipos de prótesis, marcas, servicios)"><label>¿Qué venden exactamente? (tipos de prótesis, marcas, servicios)</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="Sitio web 1"><label>Sitio web 1</label><input type="text" placeholder=""></div><div class="fld" data-q="Sitio web 2"><label>Sitio web 2</label><input type="text" placeholder=""></div><div class="fld" data-q="Sitio web 3 (si aplica)"><label>Sitio web 3 (si aplica)</label><input type="text" placeholder=""></div><div class="fld" data-q="Instagram de la empresa"><label>Instagram de la empresa</label><input type="text" placeholder=""></div><div class="fld" data-q="Página de Facebook de la empresa (link)"><label>Página de Facebook de la empresa (link)</label><input type="text" placeholder=""></div><div class="fld" data-q="Ciudad / estado donde están sus oficinas"><label>Ciudad / estado donde están sus oficinas</label><input type="text" placeholder=""></div><h2 data-sec="2 · Punto de contacto del proyecto">2 · Punto de contacto del proyecto</h2><div class="fld" data-q="Nombre de quien será nuestro contacto directo"><label>Nombre de quien será nuestro contacto directo</label><input type="text" placeholder=""></div><div class="fld" data-q="Cargo"><label>Cargo</label><input type="text" placeholder=""></div><div class="fld" data-q="WhatsApp"><label>WhatsApp</label><input type="text" placeholder=""></div><div class="fld" data-q="Correo"><label>Correo</label><input type="text" placeholder=""></div><div class="fld" data-q="¿Quién aprueba las decisiones del proyecto?"><label>¿Quién aprueba las decisiones del proyecto?</label><input type="text" placeholder=""></div><h2 data-sec="3 · Tu equipo de ventas">3 · Tu equipo de ventas</h2><p class="sd">Un bloque por cada uno de tus 5 vendedores. El estado que maneja y su horario son clave para el reparto automático y para agendar en el calendario correcto.</p><div class="vcard"><div class="vh">Vendedor 1</div><div class="fld" data-q="V1 · Nombre completo"><label>V1 · Nombre completo</label><input type="text" placeholder=""></div><div class="fld" data-q="V1 · WhatsApp / teléfono"><label>V1 · WhatsApp / teléfono</label><input type="text" placeholder="+52 ..."></div><div class="fld" data-q="V1 · Correo"><label>V1 · Correo</label><input type="text" placeholder=""></div><div class="fld" data-q="V1 · Estado(s) de la república que maneja"><label>V1 · Estado(s) de la república que maneja</label><input type="text" placeholder="Ej. Jalisco, Nayarit"></div><div class="fld" data-q="V1 · Horario y disponibilidad para agendar citas"><label>V1 · Horario y disponibilidad para agendar citas</label><input type="text" placeholder="Ej. Lun-Vie 9-18h"></div></div><div class="vcard"><div class="vh">Vendedor 2</div><div class="fld" data-q="V2 · Nombre completo"><label>V2 · Nombre completo</label><input type="text" placeholder=""></div><div class="fld" data-q="V2 · WhatsApp / teléfono"><label>V2 · WhatsApp / teléfono</label><input type="text" placeholder="+52 ..."></div><div class="fld" data-q="V2 · Correo"><label>V2 · Correo</label><input type="text" placeholder=""></div><div class="fld" data-q="V2 · Estado(s) de la república que maneja"><label>V2 · Estado(s) de la república que maneja</label><input type="text" placeholder="Ej. Jalisco, Nayarit"></div><div class="fld" data-q="V2 · Horario y disponibilidad para agendar citas"><label>V2 · Horario y disponibilidad para agendar citas</label><input type="text" placeholder="Ej. Lun-Vie 9-18h"></div></div><div class="vcard"><div class="vh">Vendedor 3</div><div class="fld" data-q="V3 · Nombre completo"><label>V3 · Nombre completo</label><input type="text" placeholder=""></div><div class="fld" data-q="V3 · WhatsApp / teléfono"><label>V3 · WhatsApp / teléfono</label><input type="text" placeholder="+52 ..."></div><div class="fld" data-q="V3 · Correo"><label>V3 · Correo</label><input type="text" placeholder=""></div><div class="fld" data-q="V3 · Estado(s) de la república que maneja"><label>V3 · Estado(s) de la república que maneja</label><input type="text" placeholder="Ej. Jalisco, Nayarit"></div><div class="fld" data-q="V3 · Horario y disponibilidad para agendar citas"><label>V3 · Horario y disponibilidad para agendar citas</label><input type="text" placeholder="Ej. Lun-Vie 9-18h"></div></div><div class="vcard"><div class="vh">Vendedor 4</div><div class="fld" data-q="V4 · Nombre completo"><label>V4 · Nombre completo</label><input type="text" placeholder=""></div><div class="fld" data-q="V4 · WhatsApp / teléfono"><label>V4 · WhatsApp / teléfono</label><input type="text" placeholder="+52 ..."></div><div class="fld" data-q="V4 · Correo"><label>V4 · Correo</label><input type="text" placeholder=""></div><div class="fld" data-q="V4 · Estado(s) de la república que maneja"><label>V4 · Estado(s) de la república que maneja</label><input type="text" placeholder="Ej. Jalisco, Nayarit"></div><div class="fld" data-q="V4 · Horario y disponibilidad para agendar citas"><label>V4 · Horario y disponibilidad para agendar citas</label><input type="text" placeholder="Ej. Lun-Vie 9-18h"></div></div><div class="vcard"><div class="vh">Vendedor 5</div><div class="fld" data-q="V5 · Nombre completo"><label>V5 · Nombre completo</label><input type="text" placeholder=""></div><div class="fld" data-q="V5 · WhatsApp / teléfono"><label>V5 · WhatsApp / teléfono</label><input type="text" placeholder="+52 ..."></div><div class="fld" data-q="V5 · Correo"><label>V5 · Correo</label><input type="text" placeholder=""></div><div class="fld" data-q="V5 · Estado(s) de la república que maneja"><label>V5 · Estado(s) de la república que maneja</label><input type="text" placeholder="Ej. Jalisco, Nayarit"></div><div class="fld" data-q="V5 · Horario y disponibilidad para agendar citas"><label>V5 · Horario y disponibilidad para agendar citas</label><input type="text" placeholder="Ej. Lun-Vie 9-18h"></div></div><h2 data-sec="4 · Reglas de reparto de leads">4 · Reglas de reparto de leads</h2><div class="fld" data-q="¿Cómo asignan hoy los prospectos por estado? Descríbelo"><label>¿Cómo asignan hoy los prospectos por estado? Descríbelo</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="Si entra un lead de un estado que nadie maneja, ¿qué hacemos con él?"><label>Si entra un lead de un estado que nadie maneja, ¿qué hacemos con él?</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="Si el vendedor asignado no contesta en cierto tiempo, ¿reasignamos a otro o avisamos a un supervisor?"><label>Si el vendedor asignado no contesta en cierto tiempo, ¿reasignamos a otro o avisamos a un supervisor?</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="¿Hay un gerente o supervisor que deba ver todo el tablero?"><label>¿Hay un gerente o supervisor que deba ver todo el tablero?</label><input type="text" placeholder=""></div><h2 data-sec="5 · Canales">5 · Canales</h2><div class="fld" data-q="WhatsApp de la empresa (número que será la puerta de entrada)"><label>WhatsApp de la empresa (número que será la puerta de entrada)</label><input type="text" placeholder=""></div><div class="fld" data-q="Campañas de Meta: ¿quién las lleva? (nombre y contacto del trafficker)"><label>Campañas de Meta: ¿quién las lleva? (nombre y contacto del trafficker)</label><input type="text" placeholder=""></div><div class="fld" data-q="¿Nos coordinamos con esa persona para que los leads de las campañas caigan al sistema?"><label>¿Nos coordinamos con esa persona para que los leads de las campañas caigan al sistema?</label><select><option value="">— elige —</option><option>Sí</option><option>No</option><option>A definir</option></select></div><div class="fld" data-q="Dominio / landing actual (si tienen)"><label>Dominio / landing actual (si tienen)</label><input type="text" placeholder=""></div><h2 data-sec="6 · Tu agente de IA (primer contacto)">6 · Tu agente de IA (primer contacto)</h2><p class="sd">El agente contesta el primer mensaje, capta datos y rutea.</p><div class="fld" data-q="¿En qué canal específico quieres el agente de primer contacto? (ej. WhatsApp de la empresa, Instagram, Messenger de la página)"><label>¿En qué canal específico quieres el agente de primer contacto? (ej. WhatsApp de la empresa, Instagram, Messenger de la página)</label><input type="text" placeholder=""></div><div class="fld" data-q="¿Qué debe preguntar SIEMPRE a cada prospecto? (nombre, estado, tipo de prótesis/necesidad...)"><label>¿Qué debe preguntar SIEMPRE a cada prospecto? (nombre, estado, tipo de prótesis/necesidad...)</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="Información clave del negocio que el agente debe saber (productos, tiempos de entrega, garantías, cobertura...)"><label>Información clave del negocio que el agente debe saber (productos, tiempos de entrega, garantías, cobertura...)</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="Preguntas frecuentes de sus clientes + la respuesta correcta"><label>Preguntas frecuentes de sus clientes + la respuesta correcta</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="¿Qué NO debe decir o hacer el agente? (ej. no dar precios, no dar consejo médico...)"><label>¿Qué NO debe decir o hacer el agente? (ej. no dar precios, no dar consejo médico...)</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="¿En qué momento debe pasar la conversación a un vendedor humano?"><label>¿En qué momento debe pasar la conversación a un vendedor humano?</label><textarea rows="3" placeholder=""></textarea></div><h2 data-sec="7 · Tu proceso de venta (pipeline)">7 · Tu proceso de venta (pipeline)</h2><div class="fld" data-q="¿Cuáles son las etapas por las que pasa un cliente? (ej. Nuevo → Contactado → Cotizado → Cierre)"><label>¿Cuáles son las etapas por las que pasa un cliente? (ej. Nuevo → Contactado → Cotizado → Cierre)</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="¿Cuánto tarda normalmente en cerrarse una venta?"><label>¿Cuánto tarda normalmente en cerrarse una venta?</label><input type="text" placeholder=""></div><h2 data-sec="8 · Tu marca (identidad visual para el ADN)">8 · Tu marca (identidad visual para el ADN)</h2><div class="tip">La <b>voz y el tono</b> de tu marca los levantamos en una <b>videollamada aparte</b> con nuestro proceso de ADN. Aquí solo lo visual.</div><div class="fld" data-q="Colores de la marca (en código o descripción). Si no los conoces, está bien — solo dinos que no los conocen."><label>Colores de la marca (en código o descripción). Si no los conoces, está bien — solo dinos que no los conocen.</label><input type="text" placeholder=""></div><div class="fld" data-q="Tipografía que usan. Si no la tienes, está bien — solo dinos."><label>Tipografía que usan. Si no la tienes, está bien — solo dinos.</label><input type="text" placeholder=""></div><div class="fld" data-q="En una frase, ¿cómo quieren que se sienta su marca?"><label>En una frase, ¿cómo quieren que se sienta su marca?</label><input type="text" placeholder=""></div><h2 data-sec="9 · Reseñas">9 · Reseñas</h2><div class="fld" data-q="Link de su ficha de Google (Google Business) para las reseñas automáticas"><label>Link de su ficha de Google (Google Business) para las reseñas automáticas</label><input type="text" placeholder=""></div><h2 data-sec="10 · Metas">10 · Metas</h2><div class="fld" data-q="¿Qué esperan lograr en los primeros 3 meses con este sistema?"><label>¿Qué esperan lograr en los primeros 3 meses con este sistema?</label><textarea rows="3" placeholder=""></textarea></div><div class="fld" data-q="¿Algo más que debamos saber?"><label>¿Algo más que debamos saber?</label><textarea rows="3" placeholder=""></textarea></div><div class="tip">Puede haber una <b>segunda ronda de preguntas</b> más adelante — la definiremos según los resultados de este arranque.</div><div class="row"><button class="btn" onclick="gen()">Enviar respuestas</button><button class="btn sec2" id="cp" disabled onclick="cp()">Copiar</button><button class="btn sec2" id="pf" disabled onclick="window.print()">Guardar PDF</button></div><p class="hint">Al enviar, se abrirá WhatsApp con tus respuestas para Prisma. También puedes copiarlas o guardar el PDF.</p><div id="preview"><h3>Respuestas · Prisma</h3><pre id="out"></pre></div></div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../config.js"></script><script>
-var PRISMA_WHATSAPP="525567823281";
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.fld{margin:11px 0}
+.fld label{display:block;font-size:13.5px;font-weight:700;margin-bottom:4px}
+.fld input{width:100%;border:1px solid #d8cdbf;border-radius:9px;padding:9px 12px;font-size:14px;font-family:inherit;background:#fffdf9}
+.fld input:focus{outline:none;border-color:#FF5A36}
+.login-card{max-width:520px;margin:22px auto 0;background:#fffdf9;border:1px solid #e2d8ca;border-radius:12px;padding:22px 20px;box-shadow:0 18px 50px rgba(26,26,26,.12)}
+.login-card h2{margin-top:0}
+.login-card .err{display:none;margin-top:10px;color:#9f1d1d;font-size:13px}
+.client-pill{display:none;margin:14px auto 0;max-width:520px;background:#EFE6DC;border-radius:999px;padding:8px 12px;font-size:12px;color:#5a5348;text-align:center}
+[hidden]{display:none!important}</style></head><body><div class="band"></div><div class="top"><img class="brand-logo" src="../assets/logotipo_beige-print.png" alt="PRISMA"><span class="an">Tu proyecto</span></div><div class="hero"><div class="k">Bienvenidos a Prisma</div><h1>Tu proyecto, en un solo lugar</h1><p>Tu cotización, cómo pagar la implementación y cómo pagar tu plataforma.</p></div>
+
+<section class="login-card" id="access-card"><h2>Acceso de cliente</h2><p class="sd">Ingresa el código que te compartió Prisma.</p><div class="fld"><label for="access-code">Código de acceso</label><input id="access-code" type="text" autocomplete="one-time-code" placeholder="XXXXX-XXXXX"></div><button class="btn" id="access-submit" type="button">Entrar</button><p class="err" id="access-error">El código no es válido o no está activo.</p></section>
+
+<div class="client-pill" id="client-pill"></div>
+
+<div class="wrap" id="landing-wrap" hidden>
+
+  <h2>1 · Tu cotización</h2>
+  <div id="quote-section"></div>
+
+  <h2>2 · Cómo pagar la implementación</h2>
+  <div id="payment-section"></div>
+
+  <h2>3 · Cómo pagar tu plataforma</h2>
+  <div id="platform-section"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../config.js"></script><script>
 var ACCESS_KEY="prisma_onboarding_client";
-function showForm(clientName){document.getElementById("access-card").hidden=true;document.getElementById("form-wrap").hidden=false;var pill=document.getElementById("client-pill");pill.textContent=clientName?"Cliente: "+clientName:"Acceso validado";var logout=document.createElement("button");logout.type="button";logout.className="logout-btn";logout.textContent="Cambiar cliente";logout.addEventListener("click",logoutAccess);pill.appendChild(logout);pill.style.display="block";}
-function logoutAccess(){sessionStorage.removeItem(ACCESS_KEY);document.getElementById("form-wrap").hidden=true;document.getElementById("client-pill").style.display="none";document.getElementById("client-pill").textContent="";document.getElementById("access-card").hidden=false;}async function validateAccess(){var cfg=window.PRISMA_CONFIG||{};var input=document.getElementById("access-code");var button=document.getElementById("access-submit");var error=document.getElementById("access-error");var code=(input.value||"").trim();if(!code){error.style.display="block";return;}button.disabled=true;button.textContent="Validando...";error.style.display="none";try{var client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey);var result=await client.rpc("verify_onboarding_access",{p_access_code:code});if(result.error||!result.data||!result.data[0]){throw new Error("invalid");}var name=result.data[0].client_name||"";sessionStorage.setItem(ACCESS_KEY,JSON.stringify({name:name,code:code}));showForm(name);}catch(e){error.style.display="block";}finally{button.disabled=false;button.textContent="Entrar";}}
-document.addEventListener("DOMContentLoaded",function(){var saved=sessionStorage.getItem(ACCESS_KEY);if(saved){try{showForm(JSON.parse(saved).name||"");}catch(e){sessionStorage.removeItem(ACCESS_KEY);}}document.getElementById("access-submit").addEventListener("click",validateAccess);document.getElementById("access-code").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();validateAccess();}});});
-function gen(){var out=[];var nodes=document.querySelectorAll('[data-sec],[data-q]');
-nodes.forEach(function(n){
- if(n.hasAttribute('data-sec')){out.push('\n=== '+n.getAttribute('data-sec')+' ===');}
- else{var el=n.querySelector('input,textarea,select');var v=el?(el.value||'').trim():'';out.push(n.getAttribute('data-q')+': '+(v||'—'));}
+
+var MODALIDAD_LABEL={
+  "contado":"Pago de contado",
+  "plan-3":"Plan a 3 meses",
+  "plan-6":"Plan a 6 meses"
+};
+
+var ITEM_TYPE_LABEL={
+  "producto":"Producto",
+  "adn":"ADN",
+  "gestion":"Gestión mensual"
+};
+
+function money(n, currency){
+  if(n===null||n===undefined) return "—";
+  var opts={style:"currency",currency:currency||"MXN",minimumFractionDigits:0,maximumFractionDigits:0};
+  return new Intl.NumberFormat("es-MX",opts).format(n);
+}
+
+function el(tag, cls, html){
+  var e=document.createElement(tag);
+  if(cls) e.className=cls;
+  if(html!==undefined) e.innerHTML=html;
+  return e;
+}
+
+function renderQuoteSection(data){
+  var box=document.getElementById("quote-section");
+  box.innerHTML="";
+  if(!data.has_quote){
+    box.appendChild(el("div","tip","Tu cotización se está preparando — en cuanto esté lista, aparecerá aquí."));
+    return;
+  }
+  var card=el("div","lcard");
+  if(data.mode==="pkg" && data.package_name){
+    var pkgRow=el("div","line");
+    pkgRow.innerHTML='<span class="lbl">Paquete '+data.package_name+'</span><span class="amt">'+money(data.package_quoted_price)+'</span>';
+    card.appendChild(pkgRow);
+    if(data.adn_tier_name){
+      card.appendChild(el("div","tip","Incluye ADN: "+data.adn_tier_name));
+    }
+  }
+  (data.line_items||[]).forEach(function(li){
+    var row=el("div","line");
+    var tag='<span class="tag">'+(ITEM_TYPE_LABEL[li.item_type]||li.item_type)+'</span>';
+    row.innerHTML='<span class="lbl">'+tag+li.item_name+'</span><span class="amt">'+money(li.quoted_price)+'</span>';
+    card.appendChild(row);
+  });
+  var totalRow=el("div","line total");
+  totalRow.innerHTML='<span class="lbl">Total</span><span class="amt">'+money(data.total)+'</span>';
+  card.appendChild(totalRow);
+  box.appendChild(card);
+}
+
+function renderPaymentSection(data){
+  var box=document.getElementById("payment-section");
+  box.innerHTML="";
+  var card=el("div","lcard");
+
+  if(data.payment_modality && data.stripe_payment_link){
+    var label=MODALIDAD_LABEL[data.payment_modality]||data.payment_modality;
+    card.appendChild(el("div","sd",label));
+    var btn=el("a","btn");
+    btn.href=data.stripe_payment_link;
+    btn.target="_blank";
+    btn.rel="noopener";
+    btn.textContent="Pagar con tarjeta";
+    card.appendChild(btn);
+  } else {
+    card.appendChild(el("div","tip","Tu modalidad de pago está por confirmarse con tu vendedora. Mientras tanto, puedes pagar por transferencia con los datos de abajo."));
+  }
+
+  box.appendChild(card);
+
+  var bank=el("div","lcard");
+  bank.appendChild(el("div","sd","O por transferencia bancaria"));
+  bank.appendChild(bankRow("Titular", data.bank_titular));
+  bank.appendChild(bankRow("Banco", data.bank_nombre));
+  bank.appendChild(bankRow("CLABE", data.bank_clabe));
+  box.appendChild(bank);
+}
+
+function bankRow(k, v){
+  var row=el("div","bank-row");
+  row.innerHTML='<span class="k">'+k+'</span><span class="v">'+(v||"—")+'</span>';
+  return row;
+}
+
+function renderPlatformSection(data){
+  var box=document.getElementById("platform-section");
+  box.innerHTML="";
+
+  if(data.has_quote){
+    var card=el("div","lcard");
+    card.appendChild(lineRow(data.platform_plan_name?("Plan "+data.platform_plan_name):"Plan", data.platform_plan_price, "USD"));
+    card.appendChild(lineRow(data.platform_consumo_name?("Consumo "+data.platform_consumo_name):"Consumo", data.platform_consumo_price, "USD"));
+    if(data.platform_whatsapp_price!==null && data.platform_whatsapp_price!==undefined){
+      card.appendChild(lineRow("WhatsApp (el Puente)", data.platform_whatsapp_price, "USD"));
+    }
+    var totalRow=el("div","line total");
+    totalRow.innerHTML='<span class="lbl">Total mensual</span><span class="amt">'+money(data.platform_total_monthly_usd,"USD")+'</span>';
+    card.appendChild(totalRow);
+    box.appendChild(card);
+  } else {
+    box.appendChild(el("div","tip","El detalle de tu plan de plataforma aparecerá aquí en cuanto tengas cotización."));
+  }
+
+  var payCard=el("div","lcard");
+  if(data.platform_payment_link){
+    var btn=el("a","btn sec2");
+    btn.href=data.platform_payment_link;
+    btn.target="_blank";
+    btn.rel="noopener";
+    btn.textContent="Pagar plataforma";
+    payCard.appendChild(btn);
+  } else {
+    payCard.appendChild(el("div","tip","El link de pago de tu plataforma está por confirmarse."));
+  }
+  box.appendChild(payCard);
+
+  var formCard=el("div","lcard");
+  formCard.appendChild(el("div","sd","Para arrancar el proyecto, completa tu formulario de arranque."));
+  var link=el("a","btn");
+  link.href="formulario.html";
+  link.textContent="Completar formulario de arranque";
+  formCard.appendChild(link);
+  box.appendChild(formCard);
+}
+
+function lineRow(label, price, currency){
+  var row=el("div","line");
+  row.innerHTML='<span class="lbl">'+label+'</span><span class="amt">'+money(price,currency)+'</span>';
+  return row;
+}
+
+function showLanding(clientName, data){
+  document.getElementById("access-card").hidden=true;
+  document.getElementById("landing-wrap").hidden=false;
+  var pill=document.getElementById("client-pill");
+  pill.textContent=clientName?"Cliente: "+clientName:"Acceso validado";
+  var logout=document.createElement("button");
+  logout.type="button";
+  logout.className="logout-btn";
+  logout.textContent="Cambiar cliente";
+  logout.addEventListener("click",logoutAccess);
+  pill.appendChild(logout);
+  pill.style.display="block";
+
+  renderQuoteSection(data);
+  renderPaymentSection(data);
+  renderPlatformSection(data);
+}
+
+function logoutAccess(){
+  sessionStorage.removeItem(ACCESS_KEY);
+  document.getElementById("landing-wrap").hidden=true;
+  document.getElementById("client-pill").style.display="none";
+  document.getElementById("client-pill").textContent="";
+  document.getElementById("access-card").hidden=false;
+}
+
+async function loadLanding(code, client){
+  var cfg=window.PRISMA_CONFIG||{};
+  var supa=window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey);
+  var result=await supa.rpc("get_onboarding_landing",{p_access_code:code});
+  if(result.error || !result.data || !result.data[0]){
+    throw new Error("landing");
+  }
+  showLanding(client, result.data[0]);
+}
+
+async function validateAccess(){
+  var cfg=window.PRISMA_CONFIG||{};
+  var input=document.getElementById("access-code");
+  var button=document.getElementById("access-submit");
+  var error=document.getElementById("access-error");
+  var code=(input.value||"").trim();
+  if(!code){ error.style.display="block"; return; }
+  button.disabled=true; button.textContent="Validando...";
+  error.style.display="none";
+  try{
+    var client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabaseAnonKey);
+    // 1) verify_onboarding_access: valida el código y registra el acceso
+    //    (onboarding_last_accessed_at) — único lugar que toca ese dato.
+    var result=await client.rpc("verify_onboarding_access",{p_access_code:code});
+    if(result.error || !result.data || !result.data[0]){ throw new Error("invalid"); }
+    var name=result.data[0].client_name||"";
+    // 2) get_onboarding_landing: vuelve a mandar el código (nunca el id ya
+    //    resuelto) para traer los datos de la landing. No vuelve a tocar
+    //    onboarding_last_accessed_at.
+    await loadLanding(code, name);
+    sessionStorage.setItem(ACCESS_KEY,JSON.stringify({name:name,code:code}));
+  }catch(e){
+    error.style.display="block";
+  }finally{
+    button.disabled=false; button.textContent="Entrar";
+  }
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+  var saved=sessionStorage.getItem(ACCESS_KEY);
+  if(saved){
+    try{
+      var parsed=JSON.parse(saved);
+      loadLanding(parsed.code, parsed.name||"").catch(function(){ sessionStorage.removeItem(ACCESS_KEY); });
+    }catch(e){ sessionStorage.removeItem(ACCESS_KEY); }
+  }
+  document.getElementById("access-submit").addEventListener("click",validateAccess);
+  document.getElementById("access-code").addEventListener("keydown",function(e){
+    if(e.key==="Enter"){ e.preventDefault(); validateAccess(); }
+  });
 });
-var txt='FORMULARIO DE ARRANQUE — PRISMA\n'+new Date().toLocaleDateString('es-MX')+'\n'+out.join('\n');
-document.getElementById('out').textContent=txt;
-document.getElementById('preview').style.display='block';
-document.getElementById('cp').disabled=false;document.getElementById('pf').disabled=false;
-document.getElementById("preview").scrollIntoView({behavior:"smooth"});var waText="Hola Prisma, les comparto mis respuestas del formulario de arranque:\n\n"+txt;window.open("https://wa.me/"+PRISMA_WHATSAPP+"?text="+encodeURIComponent(waText),"_blank","noopener");}
-function cp(){navigator.clipboard.writeText(document.getElementById('out').textContent).then(function(){var b=document.getElementById('cp');b.textContent='¡Copiado!';setTimeout(function(){b.textContent='Copiar';},1800);});}
 </script></body></html>
