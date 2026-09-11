@@ -73,10 +73,17 @@ repo).
 - Sitio estático, sin build ni dependencias — no se agrega un bundler ni un
   framework sin que sea una decisión explícita, discutida antes de escribir
   código.
+- **Los enlaces de navegación entre páginas del sitio van siempre con ruta
+  absoluta desde la raíz (`/onboarding/formulario.html`), nunca
+  relativa.** Un relativo se resuelve distinto según si la URL trae barra
+  final o no, y eso lo decide el servidor, no el enlace — así se rompió el
+  botón "Completar formulario de arranque" (`href="formulario.html"`
+  aterrizaba en `/formulario.html`, no en `/onboarding/formulario.html`,
+  porque `/onboarding` sin barra se trata como archivo, no carpeta).
 - La anon key en `config.js` es pública por diseño (ver el contrato,
   sección 6) — no es un secreto y no se trata como tal, pero tampoco se
   agrega ninguna otra llave ahí. La `service_role` nunca vive en este repo:
-  se despliega a GitHub Pages, hosting 100% estático, así que cualquier
+  se despliega a Vercel, hosting 100% estático, así que cualquier
   secret puesto aquí queda público en el bundle servido, no solo en el
   código fuente del repo.
 - Idioma de la interfaz: **español (México)**, igual que el dashboard.
