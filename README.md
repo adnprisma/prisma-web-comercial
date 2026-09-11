@@ -1,6 +1,6 @@
 # PRISMA — Sitio comercial
 
-Sitio estático responsive listo para GitHub Pages o Vercel. No requiere build, Node ni dependencias externas.
+Sitio estático responsive, publicado en Vercel (deploy automático en cada push a `main`, sin workflow de CI de por medio). No requiere build, Node ni dependencias externas.
 
 ## Qué incluye
 
@@ -18,15 +18,12 @@ Sitio estático responsive listo para GitHub Pages o Vercel. No requiere build, 
 - Formulario de diagnóstico con generación/copia de mensaje.
 - Integración opcional de WhatsApp mediante `config.js`.
 - Animaciones de entrada con IntersectionObserver y soporte para `prefers-reduced-motion`.
-- Workflow para publicar en GitHub Pages.
 
-## Publicar en GitHub Pages
+## Publicar
 
-1. Crea un repositorio nuevo en GitHub.
-2. Sube todo el contenido de esta carpeta a la raíz del repositorio.
-3. Ve a **Settings → Pages**.
-4. En **Build and deployment → Source**, selecciona **GitHub Actions**.
-5. Haz push a `main`. El workflow publicará el sitio automáticamente.
+El sitio ya está conectado a Vercel (proyecto `prisma-web-comercial`, cuenta
+Prisma ADN) — cualquier push a `main` se publica solo, sin workflow de CI
+de por medio. No hay pasos manuales que seguir.
 
 ## Activar WhatsApp del formulario
 
