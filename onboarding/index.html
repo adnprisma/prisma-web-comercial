@@ -124,9 +124,9 @@ function renderPaymentSection(data){
     btn.textContent="Pagar con tarjeta";
     card.appendChild(btn);
   } else if(data.has_quote){
-    card.appendChild(el("div","tip","Tu modalidad de pago está por confirmarse con tu vendedora. Mientras tanto, puedes pagar por transferencia con los datos de abajo."));
+    card.appendChild(el("div","tip","Tu modalidad de pago está por confirmarse con tu vendedor. Mientras tanto, puedes pagar por transferencia con los datos de abajo."));
   } else {
-    card.appendChild(el("div","tip","Espera a que tu vendedora te confirme el monto exacto antes de transferir."));
+    card.appendChild(el("div","tip","Espera a que tu vendedor te confirme el monto exacto antes de transferir."));
   }
 
   box.appendChild(card);
