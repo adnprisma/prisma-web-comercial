@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tu proyecto · Prisma</title><link rel="icon" type="image/png" href="../assets/isotipo_rojo-512.png"><style>*{margin:0;padding:0;box-sizing:border-box}
 body{background:#F0E4D6;color:#1A1A1A;font-family:"Helvetica Neue",Arial,sans-serif;line-height:1.5}
 .band{height:8px;background:#FF5A36}
-.top{background:#1A1A1A;display:flex;align-items:center;gap:18px;padding:18px 26px}.top .brand-logo{height:42px;width:auto;max-width:220px}.top .an{font-family:"Arial Black",Arial;font-weight:900;color:#F5EEE7;font-size:11px;letter-spacing:.22em;text-transform:uppercase}.logout-btn{margin-left:10px;border:0;background:transparent;color:#5a5348;font:inherit;font-size:12px;text-decoration:underline;cursor:pointer}
+.top{background:#1A1A1A;display:flex;align-items:center;gap:18px;padding:18px 26px}.top .brand-logo{height:42px;width:auto;max-width:220px}.top .an{font-family:"Arial Black",Arial;font-weight:900;color:#F5EEE7;font-size:11px;letter-spacing:.22em;text-transform:uppercase}.logout-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;margin:2px auto 0;border:0;background:transparent;color:#5a5348;font:inherit;font-size:11px;text-decoration:underline;cursor:pointer}
 .hero{background:linear-gradient(135deg,#1A1A1A,#2b2620);color:#F5EEE7;padding:34px 26px;text-align:center}
 .hero .k{font-family:"Arial Black",Arial;font-weight:900;font-size:11px;letter-spacing:.24em;color:#FF5A36;text-transform:uppercase}
 .hero h1{font-family:"Arial Black",Arial;font-weight:900;font-size:30px;color:#fff;margin:8px 0 6px;letter-spacing:-.02em}
@@ -32,12 +32,12 @@ h2{font-family:"Arial Black",Arial;font-weight:900;font-size:19px;margin:26px 0 
 .login-card{max-width:520px;margin:22px auto 0;background:#fffdf9;border:1px solid #e2d8ca;border-radius:12px;padding:22px 20px;box-shadow:0 18px 50px rgba(26,26,26,.12)}
 .login-card h2{margin-top:0}
 .login-card .err{display:none;margin-top:10px;color:#9f1d1d;font-size:13px}
-.client-pill{display:none;margin:14px auto 0;max-width:520px;background:#EFE6DC;border-radius:999px;padding:8px 12px;font-size:12px;color:#5a5348;text-align:center}
+.client-pill{display:none;margin:14px 16px 0;max-width:520px;background:#EFE6DC;border-radius:12px;padding:14px 18px;text-align:center}.client-pill-name{font-family:"Arial Black",Arial;font-weight:900;font-size:20px;line-height:1.2;color:#1A1A1A;word-break:break-word}
 [hidden]{display:none!important}</style></head><body><div class="band"></div><div class="top"><img class="brand-logo" src="../assets/logotipo_beige-print.png" alt="PRISMA"><span class="an">Tu proyecto</span></div><div class="hero"><div class="k">Bienvenidos a Prisma</div><h1>Tu proyecto, en un solo lugar</h1><p>Tu cotización, cómo pagar la implementación y cómo pagar tu plataforma.</p></div>
 
 <section class="login-card" id="access-card"><h2>Acceso de cliente</h2><p class="sd">Ingresa el código que te compartió Prisma.</p><div class="fld"><label for="access-code">Código de acceso</label><input id="access-code" type="text" autocomplete="one-time-code" placeholder="XXXXX-XXXXX"></div><button class="btn" id="access-submit" type="button">Entrar</button><p class="err" id="access-error">El código no es válido o no está activo.</p></section>
 
-<div class="client-pill" id="client-pill"></div>
+<div class="client-pill" id="client-pill"><div class="client-pill-name" id="client-pill-name"></div><button type="button" class="logout-btn" id="logout-btn">¿No eres tú? Cambia tu código</button></div>
 
 <div class="wrap" id="landing-wrap" hidden>
 
@@ -58,7 +58,8 @@ var ACCESS_KEY="prisma_onboarding_client";
 var MODALIDAD_LABEL={
   "contado":"Pago de contado",
   "plan-3":"Plan a 3 meses",
-  "plan-6":"Plan a 6 meses"
+  "plan-6":"Plan a 6 meses",
+  "plan-12":"Plan a 12 meses"
 };
 
 var ITEM_TYPE_LABEL={
@@ -198,15 +199,8 @@ function lineRow(label, price, currency){
 function showLanding(clientName, data){
   document.getElementById("access-card").hidden=true;
   document.getElementById("landing-wrap").hidden=false;
-  var pill=document.getElementById("client-pill");
-  pill.textContent=clientName?"Cliente: "+clientName:"Acceso validado";
-  var logout=document.createElement("button");
-  logout.type="button";
-  logout.className="logout-btn";
-  logout.textContent="¿No eres tú? Cambia tu código";
-  logout.addEventListener("click",logoutAccess);
-  pill.appendChild(logout);
-  pill.style.display="block";
+  document.getElementById("client-pill-name").textContent=clientName||"Acceso validado";
+  document.getElementById("client-pill").style.display="block";
 
   renderQuoteSection(data);
   renderPaymentSection(data);
@@ -217,7 +211,7 @@ function logoutAccess(){
   sessionStorage.removeItem(ACCESS_KEY);
   document.getElementById("landing-wrap").hidden=true;
   document.getElementById("client-pill").style.display="none";
-  document.getElementById("client-pill").textContent="";
+  document.getElementById("client-pill-name").textContent="";
   document.getElementById("access-card").hidden=false;
 }
 
@@ -267,6 +261,7 @@ document.addEventListener("DOMContentLoaded",function(){
       loadLanding(parsed.code, parsed.name||"").catch(function(){ sessionStorage.removeItem(ACCESS_KEY); });
     }catch(e){ sessionStorage.removeItem(ACCESS_KEY); }
   }
+  document.getElementById("logout-btn").addEventListener("click",logoutAccess);
   document.getElementById("access-submit").addEventListener("click",validateAccess);
   document.getElementById("access-code").addEventListener("keydown",function(e){
     if(e.key==="Enter"){ e.preventDefault(); validateAccess(); }
